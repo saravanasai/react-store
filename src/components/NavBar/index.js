@@ -7,10 +7,10 @@ const NavBar = () => {
         <Link className="me-3 py-2 text-dark text-decoration-none" to={'home'}>
           Home
         </Link>
-        <Link className="me-3 py-2 text-dark text-decoration-none" to={'/'}>
+        <Link className="me-3 py-2 text-dark text-decoration-none" to={'balance'}>
           Balance
         </Link>
-        <Link className="me-3 py-2 text-dark text-decoration-none" to={'/'}>
+        <Link className="me-3 py-2 text-dark text-decoration-none" to={'product'}>
           Products
         </Link>
       </nav>

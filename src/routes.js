@@ -1,3 +1,4 @@
+import Balance from "./pages/Balance";
 import Home from "./pages/Home";
 import Product from "./pages/Product";
 
@@ -10,7 +11,11 @@ const routes=[
     {
         path:"product",
         component:Product
-    }
+    },
+    {
+        path:"balance",
+        component:Balance
+    },
 ]
 
 
