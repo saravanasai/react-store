@@ -1,13 +1,17 @@
 import React from "react";
-import "./App.css";
+import { Navigate } from "react-router-dom";
 import Layout from "./Layout";
 
 
 function App() {
+
+  const auth=true
+
+
   return (
     <>
       <div className="container py-3">
-         <Layout />
+          {auth?<Layout/>:<Navigate to="/login" replace/>}
       </div>
     </>
   );
