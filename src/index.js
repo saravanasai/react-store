@@ -1,17 +1,26 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import reportWebVitals from './reportWebVitals';
-import {BrowserRouter as Router} from 'react-router-dom'
-import App from './App';
+import React from "react"
+import ReactDOM from "react-dom"
+import "./index.css"
+import reportWebVitals from "./reportWebVitals"
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
+import App from "./App"
+import Login from "./pages/Login/inedx"
+import NotFound from "./pages/404"
+import routes from "./routes"
 
 ReactDOM.render(
   <Router>
-    <App />
+    <Routes>
+      <Route path="/" element={<App />}>
+        {routes.map(route => {
+          return <Route path={route.path} element={<route.component />} />
+        })}
+      </Route>
+      <Route path="/login" element={<Login />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
   </Router>,
-  document.getElementById('root')
-);
+  document.getElementById("root")
+)
 
-
-
-reportWebVitals();
+reportWebVitals()

@@ -1,18 +1,21 @@
 
 import React from "react"
-import { Link } from "react-router-dom";
+import { Nav, NavLink } from "react-router-dom";
 const NavBar = () => {
     return ( 
         <nav className="d-inline-flex mt-2 mt-md-0 ms-md-auto">
-        <Link className="me-3 py-2 text-dark text-decoration-none" to={'home'}>
+        <NavLink  className={(navigationData) => navigationData.isActive ? 'me-3 py-2 text-dark text-decoration-underline': 'me-3 py-2 text-dark text-decoration-none' }  to={'home'}>
           Home
-        </Link>
-        <Link className="me-3 py-2 text-dark text-decoration-none" to={'balance'}>
+        </NavLink>
+        <NavLink className={(navigationData) => navigationData.isActive ? 'me-3 py-2 text-dark text-decoration-underline': 'me-3 py-2 text-dark text-decoration-none' } to={'balance'}>
           Balance
-        </Link>
-        <Link className="me-3 py-2 text-dark text-decoration-none" to={'product'}>
+        </NavLink>
+        <NavLink className={(navigationData) => navigationData.isActive ? 'me-3 py-2 text-dark text-decoration-underline': 'me-3 py-2 text-dark text-decoration-none' } to={'product'}>
           Products
-        </Link>
+        </NavLink>
+        <NavLink className={(navigationData) => navigationData.isActive ? 'me-3 py-2 text-dark text-decoration-underline': 'me-3 py-2 text-dark text-decoration-none' } to={'billing'}>
+          Billing
+        </NavLink>
       </nav>
      );
 }
