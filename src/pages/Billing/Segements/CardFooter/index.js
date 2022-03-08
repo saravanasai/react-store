@@ -1,8 +1,14 @@
-import React from "react"
+import React, { useState } from "react"
 
-const CardFooter = ({productsList,products}) => {
+const CardFooter = ({productsList,products,setPassState}) => {
 
 
+  const [stateTable,setStateTable]=useState(1)
+ 
+  const handleOnChange=()=>{
+    setStateTable(prevState=>prevState+1)
+    setPassState(prevState=>prevState+1)
+  }
 const getTotal=()=>{
     let total=0
     productsList.map(({currentProduct,currentQuantity})=>{
@@ -13,6 +19,8 @@ const getTotal=()=>{
     return total
 }
  
+
+console.log("footer component \t:",stateTable);
 
   return (
     <>
@@ -33,7 +41,7 @@ const getTotal=()=>{
                     />
                   </div>
                   <div className="px-2">
-                    <button className="btn btn-success px-2">Checkout</button>
+                    <button className="btn btn-success px-2" onClick={handleOnChange}>Checkout</button>
                   </div>
                 </div>
               </div>

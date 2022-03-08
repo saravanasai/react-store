@@ -1,10 +1,16 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import Table from "../../components/Table"
 import CardFooter from "./Segements/CardFooter/index"
 
 const Billing = () => {
   const products = ["45", "55", "65"]
   const avaiableProducts = ["soap", "oil", "jam"]
+  
+  let ki=1;
+
+
+  
+  const [passState,setPassState]=useState(1)
 
   const [currentProduct, setCurrentProduct] = useState({
     currentProduct: "",
@@ -25,11 +31,16 @@ const Billing = () => {
     setCurrentProduct({ currentProduct: "", currentQuantity: "" })
   }
 
-
-  const DeleteFromList=(id)=>{
-
+  const DeleteFromList = id => {
     cartProducts.pop()
   }
+
+
+  useEffect(()=>{ 
+    console.log("billing component");
+    console.log("billing component pass state \t :",passState);
+  },[])
+ 
 
   return (
     <>
@@ -129,7 +140,7 @@ const Billing = () => {
             </div>
           </div>
         </div>
-        <CardFooter productsList={cartProducts} products={products} />
+        <CardFooter productsList={cartProducts} setPassState={setPassState} products={products} />
       </div>
     </>
   )

@@ -1,6 +1,18 @@
-import React from "react"
+import React, { useState } from "react"
 
 const Table = ({productsList,products,ProductName,DeleteFromList}) => {
+
+
+
+
+  const [stateTable,setStateTable]=useState(1)
+ 
+  const handleOnChange=()=>{
+    setStateTable(prevState=>prevState+1)
+  }
+
+console.log("Table component");
+
 
   return (
     <div className="container">
@@ -61,7 +73,7 @@ const Table = ({productsList,products,ProductName,DeleteFromList}) => {
               
             </td>
             <td>
-                <button className="btn btn-sm btn-danger" type="button" onClick={()=>DeleteFromList(index)} >Delete</button>
+                <button className="btn btn-sm btn-danger" type="button" onClick={handleOnChange} >Delete</button>
             </td>
           </tr>)
       })}
