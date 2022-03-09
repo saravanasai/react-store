@@ -1,17 +1,16 @@
-import React from "react"
-import { Outlet, Route, Routes } from "react-router-dom"
-import Header from "../components/Header"
-import routes from "../routes"
+import React, { useContext } from "react";
+import { Outlet, Route, Routes } from "react-router-dom";
+import Header from "../components/Header";
 
 const Layout = () => {
   return (
     <>
       <Header />
-       <main>
+      <main>
         <Outlet />
       </main>
     </>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;
