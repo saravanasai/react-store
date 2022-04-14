@@ -1,5 +1,6 @@
 import Balance from "./pages/Balance";
 import Billing from "./pages/Billing";
+import Cart from "./pages/Cart";
 import Home from "./pages/Home";
 import Product from "./pages/Product";
 import UnAuthenticated from "./pages/UnAuthenticated";
@@ -25,6 +26,10 @@ const routes=[
     {
         path:'billing',
         component:Billing
+    },
+    {
+        path:'cart',
+        component:Cart
     }
 ]
 

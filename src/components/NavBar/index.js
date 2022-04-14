@@ -16,6 +16,9 @@ const NavBar = () => {
         <NavLink className={(navigationData) => navigationData.isActive ? 'me-3 py-2 text-dark text-decoration-underline': 'me-3 py-2 text-dark text-decoration-none' } to={'billing'}>
           Billing
         </NavLink>
+        <NavLink className={(navigationData) => navigationData.isActive ? 'me-3 py-2 text-dark text-decoration-underline': 'me-3 py-2 text-dark text-decoration-none' } to={'cart'}>
+          cart-(Naga)
+        </NavLink>
       </nav>
      );
 }
